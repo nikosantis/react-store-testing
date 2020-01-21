@@ -6,6 +6,7 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
+    publicPath: 'https://nikosantis.github.io/react-store-testing/',
     filename: 'bundle.js',
   },
   resolve: {
