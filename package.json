@@ -9,7 +9,8 @@
     "format": "prettier --write '{*.js,src/**/*.{js,jsx}}'",
     "lint": "eslint src/",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "test:update": "jest --updateSnapshot"
   },
   "repository": {
     "type": "",
@@ -59,14 +60,17 @@
     "eslint-plugin-react": "^7.14.3",
     "jest": "^24.9.0",
     "prettier": "^1.19.1",
+    "react-test-renderer": "^16.12.0",
     "webpack-dev-server": "^3.9.0"
   },
   "jest": {
+    "verbose": true,
     "setupFilesAfterEnv": [
       "<rootDir>/src/__test__/setupTest.js"
     ],
     "moduleNameMapper": {
       "\\.(styl|css)$": "<rootDir>/src/__mocks__/styleMock.js"
-    }
+    },
+    "watchPathIgnorePatterns": ["node_modules"]
   }
 }

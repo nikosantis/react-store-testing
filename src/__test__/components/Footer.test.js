@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { create } from 'react-test-renderer';
 import Footer from '../../components/Footer';
 
 describe('<Footer />', () => {
@@ -10,5 +11,12 @@ describe('<Footer />', () => {
   });
   test('Render of title', () => {
     expect(footer.find('.Footer-title').text()).toEqual('React Store');
+  });
+});
+
+describe('Footer Snapshot', () => {
+  test('Check the UI of the Footer component', () => {
+    const footer = create(<Footer />);
+    expect(footer.toJSON()).toMatchSnapshot();
   });
 });

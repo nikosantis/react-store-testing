@@ -6,7 +6,7 @@ import { createBrowserHistory } from 'history';
 import initialState from '../initialState';
 import reducers from '../reducers';
 
-const store = createStore(reducer, initialState);
+const store = createStore(reducers, initialState);
 const history = createBrowserHistory();
 
 const ProviderMock = props => (
